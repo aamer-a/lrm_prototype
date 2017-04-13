@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Inbox",
+    "id": 1,
+    "content": "<table><tr><th>Subject</th><th>From</th></tr><tr><td>Assessment New York City College of Technology is past due.</td><td>System</td></tr><tr><td>Assessment New York City College of Technology is past due.</td><td>System</td></tr></table>",
+    "footer": " "
+  },
+  {
+    "title": "Compliance",
+    "id": 2,
+	"content": " ",
+  "footer": " "
+  },
+  {
+    "title": "Dynamic Groups",
+    "id": 3,
+    "content": "<table><tr><th>name</th><th>spi</th></tr><tr><td>Device Function</td><td>0</td></tr><tr><td>My Automatic Dynamic Group</td><td>71</td></tr><tr><td>My Automatic Dynamic Group > Type: Application</td><td>0</td></tr><tr><td>My Automatic Dynamic Group > Type: Application > Owner: LRM Administrator</td><td>0</td></tr><tr><td>My Automatic Dynamic Group > Type: Application > Owner: LRM Administrator > Criticality: High</td><td>0</td></tr><tr><td>My Automatic Dynamic Group > Type: Application > Owner: LRM Administrator > Criticality: Low</td><td>0</td> </tr><tr><td>My Automatic Dynamic Group > Type: Application > Owner: LRM Administrator > Criticality: Moderate</td><td>0</td></tr></table>",
+    "footer": " "
+  },
+  {
+    "title": "SPI By Business Group",
+    "id": 4,
+	"content": " ",
+  "footer": " "
+  },
+  {
+    "title": "Key Performance Indicators",
+    "id": 5,
+	"content": " ",
+  "footer": " "
+  },
+  {
+    "title": "SPI By Subject Group",
+    "id": 6,
+	"content": " ",
+  "footer": " "
+  },
+  {
+    "title": "SPI By Resource Type",
+    "id": 7,
+	"content": " ",
+  "footer": " "
+  },
+  {
+    "title": "Risk Groups",
+    "id": 8,
+    "content": " ",
+    "footer": " "
+  },
+  {
+    "title": "SPI Trend",
+    "id": 9,
+    "content": " ",
+    "footer": " "
+  }
+]

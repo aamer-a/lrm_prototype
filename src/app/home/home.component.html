@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<div class="main header">
+    <!-- Display page name along with view change and page edit options -->
+    <div class="top">
+        <h5 class="float-left">Home</h5>
+        <!-- not to hard code -->
+        <div class="float-left btn-group bootstrap-select show-tick">
+            <button (click)="toggleView()" class="glyphicon glyphicon-triangle-bottom dropdown-toggle dropdown views">
+                </button>
+            <ul class="dropdown-menu" [ngStyle]="{display:isViewDdOpen ? 'block' : 'none'}">
+                <li><a class="ddHeader">Views</a></li>
+                <!-- not to hard code -->
+                <li *ngFor="let view of viewDropdownlist; let i = index">
+                    <a role="menuitem">
+                        {{view}}
+                    </a>
+                </li>
+            </ul>
+
+            <button (click)="toggleEdit()" class="glyphicon glyphicon-wrench dropdown-toggle dropdown edit"></button>
+            <ul class="dropdown-menu" [ngStyle]="{display:isEditDdOpen ? 'block' : 'none'}">
+                <li><a class="ddHeader">Home</a></li>
+                <!-- not to hard code -->
+                <li *ngFor="let option of optionsDropdownlist; let i = index">
+                    <a role="menuitem">
+                        {{option}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Enabled dd list once a panel is removed -->
+    <div class="float-right btn-group bootstrap-select show-tick ">
+        <button [disabled]="!panelDropdownlist?.length> 0" type="button" class="btn dropdown-toggle btn-default dropdown" (click)="toggleSelect()">
+            <span class="pull-left">{{header}}</span>&nbsp;
+            <span class="bs-caret">
+                <span class="caret"></span>
+            </span>
+            </button>
+        <ul class="dropdown-menu" [ngStyle]="{display:isPanelDdOpen ? 'block' : 'none'}">
+            <li *ngFor="let item of panelDropdownlist; let i = index">
+                <a role="menuitem" (click)="select(item, i)">
+                    <span [innerHtml]="item.title "></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Panels -->
+<div class="float-left">
+    <div class="dnd-container" dnd-sortable-container [sortableData]="panelData" [dropZones]="['container-dropZone']">
+        <div class="col-sm-4 fixedHeight" *ngFor="let panelDetail of panelData; let i = index" dnd-sortable [sortableIndex]="i" [dragEnabled]="dragOperation">
+            <div class="panel panel-primary" dnd-sortable-container>
+                <div class="panel-heading">
+                    {{panelDetail.title}}
+                    <div class="box-header-btns pull-right" (click)="selectedContainer = panelDetail">
+                        <a title="Move Panel">
+                            <i class="glyphicon glyphicon-move"></i>
+                        </a>
+                        <a title="Expand Panel" type="button" data-toggle="modal" data-target=".bs-example-modal-lg">
+                            <i class="glyphicon glyphicon-resize-full"></i>
+                        </a>
+                        <a title="Remove Panel" (click)="removePanel(i);">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </a>
+                        <a title="Add Panel to a view">
+                            <i class="glyphicon glyphicon-plus"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-body content" [innerHtml]="panelDetail.content">
+                </div>
+                <!-- <div class="panel-footer">
+                        <a href="#">{{container.footer}}</a>
+                    </div> -->
+            </div>
+        </div>
+
+        <!-- Popup Modal for enlarged view of the panel -->
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">{{selectedContainer?.title}} </div>
+                    <div class="modal-body" [innerHtml]="selectedContainer?.content"> </div>
+                    <div class="modal-footer">
+                        <a style="float:left">download/export</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
