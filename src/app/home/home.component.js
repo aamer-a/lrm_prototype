@@ -18,9 +18,11 @@ var HomeComponent = (function () {
         this.isPanelDdOpen = false;
         this.isViewDdOpen = false;
         this.isEditDdOpen = false;
+        this.isAddDdOpen = false;
         this.dragOperation = true;
         this.viewDropdownlist = ['Home'];
         this.optionsDropdownlist = ['Set as default', 'Reset layout'];
+        this.addDropdownlist = ['New Custome View'];
         this.panelDropdownlist = [];
         this.header = "Add Panel";
         this.panelData = [];
@@ -48,6 +50,9 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.toggleEdit = function () {
         this.isEditDdOpen = !this.isEditDdOpen;
+    };
+    HomeComponent.prototype.toggleAdd = function () {
+        this.isAddDdOpen = !this.isAddDdOpen;
     };
     HomeComponent.prototype.removePanel = function (index) {
         this.panelDropdownlist.push(new Object(this.panelData.splice(index, 1)[0]));

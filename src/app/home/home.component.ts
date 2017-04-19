@@ -15,9 +15,11 @@ export class HomeComponent implements OnInit {
   isPanelDdOpen: boolean = false;
   isViewDdOpen: boolean = false;
   isEditDdOpen: boolean = false;
+  isAddDdOpen: boolean = false;
   dragOperation: boolean = true;
   viewDropdownlist = ['Home'];
   optionsDropdownlist = ['Set as default', 'Reset layout'];
+  addDropdownlist=['New Custome View'];
   panelDropdownlist: Array<any> = [];
   header: string = "Add Panel";
 
@@ -52,6 +54,9 @@ export class HomeComponent implements OnInit {
 
   toggleEdit(){
     this.isEditDdOpen = !this.isEditDdOpen;
+  }
+  toggleAdd(){
+    this.isAddDdOpen = !this.isAddDdOpen;
   }
 
   removePanel(index: number): void {

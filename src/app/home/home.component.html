@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <div class="main header">
     <!-- Display page name along with view change and page edit options -->
     <div class="top">
@@ -8,7 +7,7 @@
             <button (click)="toggleView()" class="glyphicon glyphicon-triangle-bottom dropdown-toggle dropdown views">
                 </button>
             <ul class="dropdown-menu" [ngStyle]="{display:isViewDdOpen ? 'block' : 'none'}">
-                <li><a class="ddHeader">Views</a></li>
+                <li class="dropdown-header">Views</li>
                 <!-- not to hard code -->
                 <li *ngFor="let view of viewDropdownlist; let i = index">
                     <a role="menuitem">
@@ -19,7 +18,7 @@
 
             <button (click)="toggleEdit()" class="glyphicon glyphicon-wrench dropdown-toggle dropdown edit"></button>
             <ul class="dropdown-menu" [ngStyle]="{display:isEditDdOpen ? 'block' : 'none'}">
-                <li><a class="ddHeader">Home</a></li>
+                <li class="dropdown-header">Home</li>
                 <!-- not to hard code -->
                 <li *ngFor="let option of optionsDropdownlist; let i = index">
                     <a role="menuitem">
@@ -65,7 +64,7 @@
                         <a title="Remove Panel" (click)="removePanel(i);">
                             <i class="glyphicon glyphicon-remove"></i>
                         </a>
-                        <a title="Add Panel to a view">
+                        <a title="Add to View">
                             <i class="glyphicon glyphicon-plus"></i>
                         </a>
                     </div>
@@ -77,7 +76,6 @@
                     </div> -->
             </div>
         </div>
-
         <!-- Popup Modal for enlarged view of the panel -->
         <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
             <div class="modal-dialog modal-lg" role="document">
@@ -85,7 +83,7 @@
                     <div class="modal-header">{{selectedContainer?.title}} </div>
                     <div class="modal-body" [innerHtml]="selectedContainer?.content"> </div>
                     <div class="modal-footer">
-                        <a style="float:left">download/export</a>
+                        <a style="float:left">download/export place holder</a>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
